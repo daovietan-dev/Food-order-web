@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import CartContext from './cart-context'
 
 const CartProvider = props => {
@@ -8,7 +8,10 @@ const CartProvider = props => {
 
   // dynamic context
   const cartContext = {
-    items: [],
+    items: [
+      { id: `m1`, name: `Sushi`, price: 23, amount: 1 },
+      { id: `m2`, name: `Green Bowl`, price: 13, amount: 1 },
+    ],
     totalAmount: 0,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
